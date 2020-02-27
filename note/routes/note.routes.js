@@ -1,9 +1,7 @@
 'use strict';
 
-var Note;
-const Boom = require('boom');
-const uuid = require('node-uuid');
-const Joi = require('joi');
+let Note;
+let NoteController;
 
 exports.plugin = {
     name: 'routes-notes',
@@ -12,69 +10,34 @@ exports.plugin = {
         server.route({
             method: 'GET',
             path: '/',
-            handler: async (req, reply) => {
-                try {
-                    let notes = await Note.find().exec();
-                    return reply.response(notes);
-                } catch (err) {
-                    return reply.response(err).code(500);
-                }
-            }
+            handler: NoteController.findAll
         });
 
         server.route({
             method: 'GET',
             path: '/notes/{id}',
-            handler: async (req, reply) => {
-                try {
-                    let note = await Note.findById(req.params.id).exec();
-                    return reply.response(note);
-                } catch (err) {
-                    return reply.response(err).code(500);
-                }
-            }
+            handler: NoteController.findOne
         });
 
         server.route({
             method: "POST",
             path: '/notes',
-            handler: async (req, reply) => {
-                try {
-                    let note = new Note(req.payload);
-                    let result = await note.save();
-                    return reply.response(result);
-                } catch (err) {
-                    return reply.response(err).code(500);
-                }
-            }
+            handler: NoteController.createNote
         });
 
         server.route({
             method: "DELETE",
             path: '/notes/{id}',
-            handler: async (req, reply) => {
-                try {
-                    let note = await Note.findByIdAndDelete(req.params.id);
-                    return reply.response(note);
-                } catch (err) {
-                    return reply.response(err).code(500);
-                }
-            }
+            handler: NoteController.deleteNote
         });
 
         server.route({
             method: "PUT",
             path: '/notes/{id}',
-            handler: async (req, reply) => {
-                try {
-                    let note = await Note.findByIdAndUpdate(req.params.id, req.payload, {new: true});
-                    return reply.response(note);
-                } catch (err) {
-                    return reply.response(err).code(500);
-                }
-            }
+            handler: NoteController.editNote
         });
     }
 };
 
 Note = require('../models/note.model');
+NoteController = require('../controllers/note.controller');

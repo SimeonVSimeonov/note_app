@@ -1,6 +1,7 @@
 'use strict';
 
 const Hapi = require('@hapi/hapi');
+const Vision = require('@hapi/vision');
 const mongoose = require('mongoose');
 
 const init = async () => {
@@ -14,7 +15,8 @@ const init = async () => {
     server.app.db = mongoose.connect('mongodb+srv://simeonoff:test@cluster0-tjtwr.azure.mongodb.net/note_db?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 
     //Load plugins
-    await server.register(require('./routes/note.routes'));
+    await server.register([require('./routes/note.routes'), require('@hapi/vision')]);
+
 
     // Start the server
     await server.start();

@@ -10,9 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "@hapi/hapi": "^19.1.1",
+    "@hapi/vision": "^6.0.0",
     "boom": "^7.3.0",
     "mongodb": "^3.5.3",
-    "mongoose": "^5.9.2"
+    "mongoose": "^5.9.2",
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "joi": "^14.3.1",

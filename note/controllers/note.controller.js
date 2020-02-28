@@ -23,7 +23,22 @@ module.exports = {
 
     async createNote(req, reply) {
         try {
-            let note = new Note(req.payload);
+            let note;
+            switch (req.payload.type) {
+                case 'note':
+                    note = new Note({
+                        title: req.payload.title,
+                        type: req.payload.type,
+                        text: req.payload.text,
+                    });
+                    break;
+                case 'checkbox':
+                    note = new Note({
+                        title: req.payload.title,
+                        type: req.payload.type,
+                        checkNotes: req.payload.checkNotes
+                    });
+            }
             let result = await note.save();
             return reply.response(result);
         } catch (err) {

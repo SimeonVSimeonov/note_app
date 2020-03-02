@@ -2,6 +2,26 @@
 
 let Note;
 
+function createNoteDto(vm) {
+    switch (vm.type) {
+        case 'note':
+            return new Note({
+                title: vm.title,
+                type: vm.type,
+                text: vm.text,
+                checkNotes: null
+            });
+
+        case 'checkbox':
+            return new Note({
+                title: vm.title,
+                type: vm.type,
+                checkNotes: vm.checkNotes,
+                text: null
+            });
+    }
+}
+
 module.exports = {
     async findAll(req, reply) {
         try {
@@ -21,25 +41,11 @@ module.exports = {
         }
     },
 
+
     async createNote(req, reply) {
         try {
-            let note;
-            switch (req.payload.type) {
-                case 'note':
-                    note = new Note({
-                        title: req.payload.title,
-                        type: req.payload.type,
-                        text: req.payload.text,
-                    });
-                    break;
-                case 'checkbox':
-                    note = new Note({
-                        title: req.payload.title,
-                        type: req.payload.type,
-                        checkNotes: req.payload.checkNotes
-                    });
-            }
-            let result = await note.save();
+            let noteDto = createNoteDto(req.payload);
+            let result = await noteDto.save();
             return reply.response(result);
         } catch (err) {
             return reply.response(err).code(500);
@@ -57,8 +63,10 @@ module.exports = {
 
     async editNote(req, reply) {
         try {
-            let note = await Note.findByIdAndUpdate(req.params.id, req.payload, {new: true});
-            return reply.response(note);
+            let noteDto = createNoteDto(req.payload);
+            noteDto._id = req.params.id;
+            let result = await Note.findOneAndUpdate(req.params.id, noteDto, {new: true, runValidators: true});
+            return reply.response(result);
         } catch (err) {
             return reply.response(err).code(500);
         }

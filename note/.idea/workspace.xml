@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="becd1336-f735-477b-8102-6a088f18ff74" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/controllers/note.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/note.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/note.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/note.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/note.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/note.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/note.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/note.controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/note.model.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/note.routes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +23,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
+        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -34,13 +40,16 @@
     </option>
   </component>
   <component name="ProjectId" id="1YG9A3tKetW8sHRziB7Rfgva5Fp" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -51,8 +60,13 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="C:\Users\simeo\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\193.6494.34\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\work\note-app\note\server" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="app" type="NodeJSConfigurationType" path-to-js-file="index.js" working-dir="$PROJECT_DIR$">
+    <configuration name="app" type="NodeJSConfigurationType" path-to-js-file="$PROJECT_DIR$/server/index.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
   </component>
@@ -69,7 +83,8 @@
       <workItem from="1582557917435" duration="2178000" />
       <workItem from="1582615201117" duration="1839000" />
       <workItem from="1582620800360" duration="48765000" />
-      <workItem from="1582794758568" duration="37444000" />
+      <workItem from="1582794758568" duration="43283000" />
+      <workItem from="1583136897967" duration="17909000" />
     </task>
     <servers />
   </component>
@@ -77,6 +92,7 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/note-app" />
     </ignored-roots>
@@ -94,26 +110,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582794892833" />
-    <state width="1899" height="190" key="GridCell.Tab.0.bottom" timestamp="1582899696855">
+    <state width="1899" height="179" key="GridCell.Tab.0.bottom" timestamp="1583165859363">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="190" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582899696855" />
-    <state width="1899" height="190" key="GridCell.Tab.0.center" timestamp="1582899696854">
+    <state width="1899" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583165859363" />
+    <state width="1899" height="179" key="GridCell.Tab.0.center" timestamp="1583165859363">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="190" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582899696854" />
-    <state width="1899" height="190" key="GridCell.Tab.0.left" timestamp="1582899696854">
+    <state width="1899" height="179" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583165859363" />
+    <state width="1899" height="179" key="GridCell.Tab.0.left" timestamp="1583165859363">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="190" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582899696854" />
-    <state width="1899" height="190" key="GridCell.Tab.0.right" timestamp="1582899696854">
+    <state width="1899" height="179" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583165859363" />
+    <state width="1899" height="179" key="GridCell.Tab.0.right" timestamp="1583165859363">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="190" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582899696854" />
-    <state x="819" y="231" key="RollbackChangesDialog" timestamp="1582802593834">
+    <state width="1899" height="179" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583165859363" />
+    <state x="819" y="231" key="RollbackChangesDialog" timestamp="1582901571395">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="819" y="231" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582802593834" />
+    <state x="819" y="231" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582901571395" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1582794927606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

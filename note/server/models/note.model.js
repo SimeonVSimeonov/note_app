@@ -18,7 +18,7 @@ const NoteSchema = new Schema({
     checkNotes: {
         type: [{
             text: String,
-            isChecked: Boolean
+            isChecked: {type: Boolean, default: false}
         }],
         default: undefined
     }

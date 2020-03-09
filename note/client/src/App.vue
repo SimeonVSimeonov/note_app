@@ -31,7 +31,8 @@
               <div v-show="shownType('checkbox')">
                 <ul class="input-group">
                   <li class="input-group" v-for="(checkNote, index) in input.note.checkNotes">
-                    <input class="form-check-input" :value="checkNote.isChecked" v-model="checkNote.isChecked" type="checkbox" id="inlineFormCheck">
+                    <input class="form-check-input" :value="checkNote.isChecked" v-model="checkNote.isChecked"
+                           type="checkbox" id="inlineFormCheck">
                     <input class="form-control" v-model="checkNote.text" placeholder="check note text"
                            aria-label="check note text">
                     <button class="btn btn-outline-secondary float-right" v-on:click="removeRow(index)" type="button">
@@ -71,7 +72,9 @@
             <span v-if="note.type === 'checkbox'"></span>
             <div class="container">
               <ul v-for="checkNote in note.checkNotes" class="list-group">
-                <li class="list-group-item" v-bind:class="{active: checkNote.isChecked}">{{checkNote.text}}</li>
+                <li @click="updateIsChecked(note, checkNote)" class="list-group-item"
+                    v-bind:class="{active: checkNote.isChecked}">{{checkNote.text}}
+                </li>
                 <br>
               </ul>
             </div>
@@ -123,6 +126,11 @@
     },
 
     methods: {
+      updateIsChecked: function (note, item) {
+        let checkNote = note.checkNotes.find(x => x._id === item._id);
+        checkNote.isChecked = !checkNote.isChecked;
+        axios.put(`http://localhost:3000/notes/${note._id}`, note, {'headers': {'Content-Type': 'application/json'}});
+      },
       findNote(id) {
         axios({
           method: "GET",

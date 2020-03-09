@@ -65,7 +65,7 @@ module.exports = {
         try {
             let noteDto = createNoteDto(req.payload);
             noteDto._id = req.params.id;
-            let result = await Note.findOneAndUpdate(req.params.id, noteDto, {new: true, runValidators: true});
+            let result = await Note.findByIdAndUpdate(req.params.id, noteDto, {new: true, runValidators: true});
             return reply.response(result);
         } catch (err) {
             return reply.response(err).code(500);

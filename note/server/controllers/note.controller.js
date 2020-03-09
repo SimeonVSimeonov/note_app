@@ -9,7 +9,7 @@ function createNoteDto(vm) {
                 title: vm.title,
                 type: vm.type,
                 text: vm.text,
-                checkNotes: null
+                checkNotes: []
             });
 
         case 'checkbox':
